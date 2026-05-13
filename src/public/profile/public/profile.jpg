@@ -1,0 +1,5 @@
+<img
+  className={styles.avatar}
+  src="/profile.jpg"
+  alt="profile"
+/>

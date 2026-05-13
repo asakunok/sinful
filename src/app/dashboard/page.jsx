@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "../page.module.css";
+import styles from "./page.module.css";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
@@ -9,6 +9,7 @@ export default function Dashboard() {
 
   useEffect(() => {
     const isLogin = localStorage.getItem("isLogin");
+
     if (!isLogin) {
       router.push("/dashboard");
     }
@@ -18,14 +19,18 @@ export default function Dashboard() {
     <div className={styles.container}>
 
       <aside className={styles.sidebar}>
-        <h2>Dulguun</h2>
+        <div>
+          <h2 className={styles.logo}>🔥 Dulguun Erdene</h2>
 
-        <nav>
-          <a href="#">🏠 Home</a>
-          <a href="#">📊 Stats</a>
-          <a href="#">💻 Projects</a>
-          <a href="#">⚙️ Settings</a>
-        </nav>
+          <nav className={styles.nav}>
+            <a href="#">🏠 Нүүр</a>
+            <a href="#">📊 Статистик</a>
+            <a href="#">💻 Төслүүд</a>
+            <a href="#">📁 Файлууд</a>
+            <a href="#">🧠 Ур чадвар</a>
+            <a href="#">⚙️ Тохиргоо</a>
+          </nav>
+        </div>
 
         <button
           className={styles.logout}
@@ -34,35 +39,88 @@ export default function Dashboard() {
             router.push("/login");
           }}
         >
-          🚪 Logout
+          🚪 Гарах
         </button>
       </aside>
 
       <main className={styles.main}>
-        <h1>Dashboard 🚀</h1>
+
+        <div className={styles.topbar}>
+          <div>
+            <h1>Хяналтын Самбар 🚀</h1>
+            <p>Тавтай морил, Dulguun 👋</p>
+          </div>
+
+          <img
+            className={styles.avatar}
+            src="/profile.jpg"
+            alt="profile"
+          />
+        </div>
 
         <div className={styles.cards}>
 
           <div className={styles.card}>
-            <h3>Projects</h3>
-            <p>5+</p>
+            <h3>📁 Төсөл</h3>
+            <p>12+</p>
+            <span>Идэвхтэй хөгжүүлэлт</span>
           </div>
 
           <div className={styles.card}>
-            <h3>Learning</h3>
-            <p>2 years</p>
+            <h3>📚 Туршлага</h3>
+            <p>2 Жил</p>
+            <span>React & Next.js</span>
           </div>
 
           <div className={styles.card}>
-            <h3>Progress</h3>
+            <h3>⚡ Ахиц</h3>
             <p>100%</p>
+            <span>Өдөр бүр хөгжиж байна</span>
+          </div>
+
+          <div className={styles.card}>
+            <h3>🔥 Rank</h3>
+            <p>Pro</p>
+            <span>Frontend Developer</span>
           </div>
 
         </div>
 
-        <div className={styles.bigCard}>
-          <h2>Welcome back 👋</h2>
-          <p>Эндээс чи өөрийн project-ууд, хөгжүүлэлтээ удирдана.</p>
+     <div className={styles.bigCard}>
+          <h2>Тавтай морил 👋</h2>
+
+          <p>
+            Эндээс чи өөрийн төслүүдээ удирдаж,
+            хөгжүүлэлтийн явцаа хянаж,
+            шинэ санаануудаа хэрэгжүүлэх боломжтой.
+          </p>
+
+          <button className={styles.startBtn}>
+            🚀 Шинэ Төсөл Эхлэх
+          </button>
+        </div>
+
+        <div className={styles.section}>
+          <h2>🕒 Сүүлд хийсэн ажлууд</h2>
+
+          <div className={styles.projects}>
+
+            <div className={styles.projectCard}>
+              <h3>Portfolio Website</h3>
+              <p>Next.js ашиглан хувийн website хийж байна.</p>
+            </div>
+
+            <div className={styles.projectCard}>
+              <h3>Login System</h3>
+              <p>Authentication болон dashboard хөгжүүлэлт.</p>
+            </div>
+
+            <div className={styles.projectCard}>
+              <h3>Anime UI Design</h3>
+              <p>Орчин үеийн dark mode дизайн туршиж байна.</p>
+            </div>
+
+          </div>
         </div>
 
       </main>
