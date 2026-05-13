@@ -48,7 +48,7 @@ export default function Dashboard() {
         <div className={styles.topbar}>
           <div>
             <h1>Хяналтын Самбар 🚀</h1>
-            <p>Тавтай морил, Dulguun 👋</p>
+            <p>Тавтай морил, Dulguun Erdene 👋</p>
           </div>
 
           <img
