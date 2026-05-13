@@ -10,7 +10,7 @@ export default function LoginPage() {
   const router = useRouter();
 
   const handleLogin = () => {
-    if (username === "1" && password === "1") {
+    if (username === "ukhaan" && password === "dulguun") {
       router.push("/dashboard");
     } else {
       alert("Нэр эсвэл нууц үг буруу!");
