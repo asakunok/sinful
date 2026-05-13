@@ -100,7 +100,7 @@ export default function Home() {
 
       <section id="about" className={styles.section}>
         <h2>Миний тухай</h2>
-        <p>Би код бичих дуртай сурагч. React ашиглан сайт хийж сурч байгаа.</p>
+        <p>Би код бичих дуртай сурагч. React ашиглан сайт хийж сурч байгаа.    💞U💞</p>
       </section>
 
       <section id="skills" className={styles.section}>
